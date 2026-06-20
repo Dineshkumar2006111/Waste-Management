@@ -1,0 +1,124 @@
+{
+  "admin": {
+    "adminid": 1234567,
+    "password": "12345678"
+  },
+  "reports": [
+    {
+      "id": "1",
+      "userId": "u001",
+      "username": "Dinesh",
+      "email": "dinesh@example.com",
+      "password": "12345678",
+      "report": [
+        {
+          "reportId": "r001",
+          "area": "Pothanur",
+          "description": "Overflow garbage in the nearby river",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781933973/miomxiveufp7tb75htkr.jpg",
+          "Status": "Incomplete",
+          "date": "2025-11-01"
+        },
+        {
+          "reportId": "r002",
+          "area": "Tambaram",
+          "description": "Street water is flow over the road.",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934452/bjcot3kjovuw6csjlgx8.jpg",
+          "Status": "Incomplete",
+          "date": "2026-06-15"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userId": "u002",
+      "username": "Karthik",
+      "email": "karthik@example.com",
+      "password": "12345678",
+      "report": [
+        {
+          "reportId": "r002",
+          "area": "Tambaram",
+          "description": "Due to rain the rain water is stuck in the road",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934549/ofmjjyx13kqq7azxuqrh.jpg",
+          "Status": "complete",
+          "date": "3005-09-02"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "userId": "u004",
+      "username": "Arun",
+      "email": "arun@example.com",
+      "password": "12345678",
+      "report": [
+        {
+          "reportId": "r004",
+          "area": "T Nagar",
+          "description": "Medical waste spread over the road.",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934650/itr6mkgafvwoqt4ht5mo.jpg",
+          "Status": "Incomplete",
+          "date": "2026-06-04"
+        }
+      ]
+    },
+    {
+      "id": "508e",
+      "username": "bharath",
+      "email": "bharathkumar04092006@gmail.com",
+      "password": "12",
+      "report": [
+        {
+          "reportId": "r001781574285954",
+          "area": "kanyakumari",
+          "description": "Medical waste spread over road.",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934739/cudx5lpeuxlmwgnfqq5d.jpg",
+          "date": "2026-06-16",
+          "Status": "incomplete"
+        },
+        {
+          "reportId": "r001781574376428",
+          "area": "kanyakumari",
+          "description": "Wastes are thrown in the roadside",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934878/uulibpetwyex5knldzsd.jpg",
+          "date": "2026-03-02",
+          "Status": "incomplete"
+        }
+      ]
+    },
+    {
+      "id": "60e1",
+      "username": "Deolin raja",
+      "email": "deolinraja12@gmail.com",
+      "password": "123",
+      "report": [
+        {
+          "reportId": "r001781574285954",
+          "area": "kanyakumari",
+          "description": "Medical waste spread over the road.",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781934963/uamn5sad0lnnfffjolwh.jpg",
+          "date": "2026-06-16",
+          "Status": "incomplete"
+        },
+        {
+          "reportId": "r001781574376428",
+          "area": "kanyakumari",
+          "description": "Wastes are thrown in the roadside",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781935006/tbqbgkxi9gf9hb3dxxnb.jpg",
+          "date": "2026-03-02",
+          "Status": "incomplete"
+        },
+        {
+          "reportId": "r001781935368358",
+          "area": "Pothanur",
+          "description": "roadside waste is over in my area.",
+          "photoUrl": "https://res.cloudinary.com/dafedlnag/image/upload/v1781935387/rvgk4rswuxdwlo97zpba.jpg",
+          "date": "2026-06-20",
+          "Status": "incomplete"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
