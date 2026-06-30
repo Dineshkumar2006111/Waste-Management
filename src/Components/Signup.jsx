@@ -58,7 +58,7 @@ const dispatch=useDispatch()
   };
 
   
- const response= await fetch("http://localhost:4000/reports", {
+ const response= await fetch("https://waste-management-db-json.onrender.com/reports", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

@@ -12,6 +12,8 @@ const Useredit = () => {
  const navigate=useNavigate()
   const userid=useSelector(state=>state.report.userid)
   const reportid=useSelector(state=>state.report.reportid)
+  const tamil=useSelector(state=>state.report.tamil)
+
 
   const [user,setuser]=useState([])
   const [isload,setisload]=useState(false)
@@ -25,7 +27,7 @@ const Useredit = () => {
   })
 
  useEffect(()=>{
-    fetch(`http://localhost:4000/reports/${userid}`,{method:"GET"})
+    fetch(`https://waste-management-db-json.onrender.com/reports/${userid}`,{method:"GET"})
     .then(res=>res.json())
     .then(data=>setuser(data))
  },[])
@@ -141,11 +143,32 @@ const detloc=()=>{
 
   return (
     <div>
-          <button className='backbutton' onClick={handleback}><IoArrowBackOutline /></button>
+      <button className='backbutton' onClick={handleback}><IoArrowBackOutline /></button>
+      {tamil ?(
+        <div>
+          <center>
+        <div id='nrdiv'>
+          <h1 id='nrh'>புகாரை திருத்து</h1>
+            <span style={{position:"relative"}} ><input type="text" className='inp'  name='area'  value={state.area} placeholder='Area' onChange={(e)=>{handleChange(e)}}/>
+            <h3 id='locb' onMouseEnter={showme} onMouseLeave={showml} onClick={detloc}><MdLocationOn size={35} /></h3>
+            <p id='hlmt' ref={hlm}> இருப்பிடத்தை கண்டறிதல்</p>{loading && <p id='hlomt'>ஏற்றப்படுகிறது...</p>}</span>
+           <input type="text" className='inp' name='description'  value={state.description} placeholder='Description' onChange={(e)=>{handleChange(e)}}/> 
+            <input type="date" className='inp'  name='date' value={state.date}  onChange={(e)=>{handleChange(e)}}/>
+            <h4>படத்தை பதிவேற்றவும்</h4>
+            <input type="file" id='fs' onChange={(e)=>{handleimage(e)}}/>
+            
+            {isload ? <b>Wait a sec...</b>:<button onClick={()=>{handlesubmit()}}>புகாரை புதுப்பி</button>}
+            </div>
+        </center>
+        </div>
+      ):(
+        <div>
         <center>
         <div id='nrdiv'>
           <h1 id='nrh'>Edit report</h1>
-            <span style={{position:"relative"}} ><input type="text" className='inp'  name='area'  value={state.area} placeholder='Area' onChange={(e)=>{handleChange(e)}}/><h3 id='locb' onMouseEnter={showme} onMouseLeave={showml} onClick={detloc}><MdLocationOn /></h3><p id='hlm' ref={hlm}>Auto location Detection</p>{loading && <p id='hlom'>Loading...</p>}</span>
+            <span style={{position:"relative"}} ><input type="text" className='inp'  name='area'  value={state.area} placeholder='Area' onChange={(e)=>{handleChange(e)}}/>
+            <h3 id='locb' onMouseEnter={showme} onMouseLeave={showml} onClick={detloc}><MdLocationOn size={35}/></h3>
+            <p id='hlm' ref={hlm}>Auto location Detection</p>{loading && <p id='hlom'>Loading...</p>}</span>
            <input type="text" className='inp' name='description'  value={state.description} placeholder='Description' onChange={(e)=>{handleChange(e)}}/> 
             <input type="date" className='inp'  name='date' value={state.date}  onChange={(e)=>{handleChange(e)}}/>
             <h4>Report by Image</h4>
@@ -154,6 +177,9 @@ const detloc=()=>{
             {isload ? <b>Wait a sec...</b>:<button onClick={()=>{handlesubmit()}}>Edit report</button>}
             </div>
         </center>
+        </div>
+      )}
+          
 
     </div>
   )

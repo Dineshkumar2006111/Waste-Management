@@ -37,7 +37,7 @@ function Adminlogin() {
   }
 
   // ✅ Fetch users
-  fetch("http://localhost:4000/admin")
+  fetch("https://waste-management-db-json.onrender.com/admin")
     .then((res) => res.json())
     .then((data) => {
 

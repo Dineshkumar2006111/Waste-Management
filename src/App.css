@@ -195,6 +195,17 @@
   right: -200px;
   display: none;
 }
+#hlmt{
+  background-color: white;
+  box-shadow: 0 0 7px black;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 9px;
+  position: absolute;
+  top: 5px;
+  right: -260px;
+  display: none;
+}
 #hlom{
   background-color: white;
   box-shadow: 0 0 7px black;
@@ -203,8 +214,17 @@
   border-radius: 9px;
   position: absolute;
   top: 5px;
-  right: -90px;
-  
+  right: -90px; 
+}
+#hlomt{
+  background-color: white;
+  box-shadow: 0 0 7px black;
+  width: fit-content;
+  padding: 8px;
+  border-radius: 9px;
+  position: absolute;
+  top: 5px;
+  right: -175px; 
 }
 .inp{
   height: 27px;
@@ -366,7 +386,22 @@ background-color: rgb(255, 255, 255);
 #nrdiv{
   width: 44%;
 }
-
+#hlmt{
+  right:-40px;
+  top:-35px;
+}
+#hlm{
+  right:-40px;
+  top:-35px;
+}
+#hlomt{
+   right:-40px;
+  top:-35px;
+}
+#hlom{
+   right:-40px;
+  top:-35px;
+}
 }
 
 

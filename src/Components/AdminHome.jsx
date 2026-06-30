@@ -10,7 +10,7 @@ const AdminHome = () => {
 const navigate=useNavigate()
 
   useEffect(()=>{
-    fetch('http://localhost:4000/reports',{method:"GET"})
+    fetch('https://waste-management-db-json.onrender.com/reports',{method:"GET"})
   .then((res)=>{return res.json(); })
   .then((data)=>{ setreports(data)})
   },[])

@@ -36,7 +36,7 @@ const dispatch=useDispatch()
   }
 
   
-  fetch("http://localhost:4000/reports")
+  fetch("https://waste-management-db-json.onrender.com/reports")
     .then((res) => res.json())
     .then((data) => {
 

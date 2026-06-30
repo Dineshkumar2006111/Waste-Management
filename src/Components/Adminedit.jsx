@@ -13,7 +13,7 @@ const [frp,setfrp]=useState({})
 const navigate=useNavigate()
 
   useEffect(()=>{
-    fetch('http://localhost:4000/reports',{method:"GET"})
+    fetch('https://waste-management-db-json.onrender.com/reports',{method:"GET"})
   .then((res)=>{return res.json(); })
   .then((data)=>{setreports(data)})
   
@@ -45,7 +45,7 @@ const [inptext,setinptext]=useState("")
   const updaterep=reports.find(u=>u.id==uid)
   
   
-    fetch(`http://localhost:4000/reports/${uid}`,
+    fetch(`https://waste-management-db-json.onrender.com/reports/${uid}`,
      {method:"PUT",
        headers:{
          "Content-Type":"application/json"
