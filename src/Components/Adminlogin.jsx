@@ -20,6 +20,7 @@ function Adminlogin() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [load,setload]=useState(false)
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,7 +29,7 @@ function Adminlogin() {
 
   const handleSubmit = (e) => {
   e.preventDefault();
-
+setload(true)
   if (!form.adminid || !form.password) {
     
     
@@ -42,8 +43,10 @@ function Adminlogin() {
     .then((data) => {
 
       if(form.adminid==data.adminid && form.password==data.password){
+        setload(false)
         navigate("/adminhome");
       } else {
+        setload(false)
         alert("Invalid Id or Password ❌");
       
       }
@@ -103,7 +106,7 @@ function Adminlogin() {
               )
             }}
           />
-
+{load?<h3 style={{textAlign:"center",marginTop:"5px"}}>Wait a sec..</h3>:
           <Button
             type="submit"
             variant="contained"
@@ -112,14 +115,14 @@ function Adminlogin() {
           >
            Admin Login
           </Button>
-
+}
         </form>
 
-
-        <Typography align="center" style={{ marginTop: "10px" }}>
-          Don't have an account? <Link to="/" style={{color:"blue"}}>Sign Up</Link>
-        </Typography>
-
+            
+                <Typography align="center" style={{ marginTop: "10px" }}>
+                  Don't have an account? <Link to="/" style={{color:"blue"}}>Sign Up</Link>
+                 </Typography>
+           
       </Paper>
 
     </div>

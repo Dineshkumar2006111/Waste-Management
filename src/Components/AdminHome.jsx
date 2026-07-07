@@ -8,11 +8,13 @@ const AdminHome = () => {
   const dispatch=useDispatch()
   var [reports,setreports]=useState([])
 const navigate=useNavigate()
+const [load,setload]=useState(false)
 
   useEffect(()=>{
     fetch('https://waste-management-db-json.onrender.com/reports',{method:"GET"})
   .then((res)=>{return res.json(); })
   .then((data)=>{ setreports(data)})
+  setload(true)
   },[])
   
 
@@ -36,7 +38,7 @@ const handleid=(userid,reportid)=>{
       </nav>
 
 
-
+    {load?(<div>
 
       <h2 style={{marginTop:"20px",marginLeft:"20px",fontSize:"30px"}}>Administer page</h2>
     {reports?.map((repor)=>{
@@ -66,7 +68,8 @@ const handleid=(userid,reportid)=>{
         </div>
       </div>)
     })}
-
+    </div>
+): <center><h1 style={{marginTop:"250px"}}>Loading...</h1></center>}
     </div>
   )
 }

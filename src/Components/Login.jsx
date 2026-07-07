@@ -15,6 +15,7 @@ import { setuserid } from "./reportslice";
 function Login() {
 const dispatch=useDispatch()
   const navigate = useNavigate();
+  const [load,setload]=useState(false)
 
   const [form, setForm] = useState({
     email: "",
@@ -34,12 +35,12 @@ const dispatch=useDispatch()
     alert("Please fill all fields ❌");
     return;
   }
-
+setload(true)
   
   fetch("https://waste-management-db-json.onrender.com/reports")
     .then((res) => res.json())
     .then((data) => {
-
+      setload(false)
       
       const user = data.find(
         (u) =>
@@ -111,7 +112,7 @@ const dispatch=useDispatch()
               )
             }}
           />
-
+{load? <h3 style={{textAlign:"center"}}>Wait a sec...</h3>:
           <Button
             type="submit"
             variant="contained"
@@ -119,7 +120,7 @@ const dispatch=useDispatch()
             style={{ marginTop: "20px" }}
           >
             Login
-          </Button>
+          </Button>}
 
         </form>
 

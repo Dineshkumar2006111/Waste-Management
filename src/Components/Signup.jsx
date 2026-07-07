@@ -16,6 +16,8 @@ function SignUp() {
 
 var [reports,setreports]=useState([])
   const navigate = useNavigate();
+  const [load,setload]=useState(false)
+  
 const dispatch=useDispatch()
   const [form, setForm] = useState({
     name: "",
@@ -40,7 +42,7 @@ const dispatch=useDispatch()
     setError("All fields are required ❌");
     return;
   }
-
+setload(true)
   if (form.password !== form.confirmPassword) {
     setError("Passwords do not match ❌");
     return;
@@ -70,7 +72,7 @@ const data=await response.json()
 const userid=data.id
 localStorage.setItem("userid",userid)
 dispatch(setuserid({userid}))
-
+setload(false)
 
 alert("Welcome")
 
@@ -179,7 +181,7 @@ alert("Welcome")
               {error}
             </Typography>
           )}
-
+{load? <h3 style={{textAlign:"center"}}>Wait a sec...</h3>:
           <Button
             type="submit"
             variant="contained"
@@ -188,7 +190,7 @@ alert("Welcome")
            
           >
             Sign Up
-          </Button>
+          </Button>}
 
         </form>
 

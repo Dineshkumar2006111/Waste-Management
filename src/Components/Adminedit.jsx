@@ -11,6 +11,7 @@ var [dat,setdat]=useState("")
 var [reports,setreports]=useState([])
 const [frp,setfrp]=useState({})
 const navigate=useNavigate()
+const [load,setload]=useState(false)
 
   useEffect(()=>{
     fetch('https://waste-management-db-json.onrender.com/reports',{method:"GET"})
@@ -39,22 +40,24 @@ const [inptext,setinptext]=useState("")
  }
 
  const handlesubmit=()=>{
+  setload(true)
   frp.Status=inptext;
   frp.date=dat
  
   const updaterep=reports.find(u=>u.id==uid)
   
   
-    fetch(`https://waste-management-db-json.onrender.com/reports/${uid}`,
+  const res=  fetch(`https://waste-management-db-json.onrender.com/reports/${uid}`,
      {method:"PUT",
        headers:{
          "Content-Type":"application/json"
        },
        body:JSON.stringify(updaterep)
      })
-
+  setload(true)
+     if(res){
      alert("update Successfully")
-     navigate("/adminhome")
+     navigate("/adminhome")}
 
  }
 
@@ -77,7 +80,7 @@ const [inptext,setinptext]=useState("")
                     <h1>{frp.area}</h1>
                      <label htmlFor="status">Status : <input type="text" id='status' value={inptext} style={{width:"70%"}} onChange={(e)=>{handleChange(e)}}/></label>
                      <input id='date' value={dat} onChange={(e)=>{setdat(e.target.value)}} type="date" />
-                     <button onClick={()=>{handlesubmit()}}>Update</button>
+                     {load? <h3>wait a sec...</h3>:<button onClick={()=>{handlesubmit()}}>Update</button>}
                 </center>
             </div>
         </center>

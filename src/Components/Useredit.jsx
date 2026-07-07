@@ -44,7 +44,7 @@ useEffect(()=>{
     }
 },[user])
 
- const handleChange=(e)=>{
+ const handleChange=async(e)=>{
     setstate({...state,[e.target.name]:e.target.value})
  }  
 
@@ -91,7 +91,7 @@ const handlesubmit=()=>{
     return rep;
   });
 
-fetch(`http://localhost:4000/reports/${userid}`,
+const res= fetch(`https://waste-management-db-json.onrender.com/reports/${userid}`,
      {method:"PUT",
        headers:{
          "Content-Type":"application/json"
@@ -103,8 +103,11 @@ fetch(`http://localhost:4000/reports/${userid}`,
        )
      })
 
-     alert("Edited Successfully")
-     navigate("/userhome")
+     if(res){
+      alert("Edited Successfully");
+       navigate("/userhome")
+    }
+     
 
 }
 

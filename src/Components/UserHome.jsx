@@ -85,7 +85,7 @@ const changeenglish=()=>{
           <div>
 
              <nav id='nav'>
-        <h1 style={{lineHeight:"50px",marginLeft:"20px",color:"white"}}>கழிவு மேலாண்மை</h1>
+        <h1 style={{lineHeight:"50px",marginLeft:"20px",color:"black"}}>கழிவு மேலாண்மை</h1>
         <ul>
             <Link id='langb' onClick={()=>showlangm()} onMouseEnter={langme} onMouseLeave={langmd} ><IoLanguage size={30} /></Link><p id='hlang' ref={hlang}>மொழி</p>
             <Link id='addb'  onMouseEnter={arme} onMouseLeave={armd} to={'/newreports'}><MdOutlineAddCard size={30} /></Link><p id='har' ref={har}>புகார் பதிவு</p>
@@ -123,7 +123,7 @@ const changeenglish=()=>{
       ):(
         <div>
     <nav id='nav'>
-        <h1 style={{lineHeight:"50px",marginLeft:"20px",color:"white"}}>Waste Management</h1>
+        <h1 style={{lineHeight:"50px",marginLeft:"20px",color:"black"}}>Waste Management</h1>
         <ul>
             <Link id='langb' onClick={()=>showlangm()} onMouseEnter={langme} onMouseLeave={langmd} ><IoLanguage size={30} /></Link><p id='hlang' ref={hlang}>Language</p>
             <Link id='addb'  onMouseEnter={arme} onMouseLeave={armd} to={'/newreports'}><MdOutlineAddCard size={30} /></Link><p id='har' ref={har}>Add report</p>
