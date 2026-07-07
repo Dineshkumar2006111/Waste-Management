@@ -63,6 +63,14 @@ const showlangm=()=>{
   } 
 }
 
+    const nhar=useRef(null)
+const narme=()=>{
+  nhar.current.style.display="block"
+}
+const narmd=()=>{
+  nhar.current.style.display="none"
+}
+
 const changetamil=()=>{
   console.log("tamil");
   
@@ -85,12 +93,14 @@ const changeenglish=()=>{
           <div>
 
              <nav id='nav'>
-        <h1 style={{lineHeight:"50px",marginLeft:"20px",color:"black"}}>கழிவு மேலாண்மை</h1>
+        <h1 id='th' style={{lineHeight:"50px",marginLeft:"20px",color:"black"}}>கழிவு மேலாண்மை</h1>
         <ul>
             <Link id='langb' onClick={()=>showlangm()} onMouseEnter={langme} onMouseLeave={langmd} ><IoLanguage size={30} /></Link><p id='hlang' ref={hlang}>மொழி</p>
             <Link id='addb'  onMouseEnter={arme} onMouseLeave={armd} to={'/newreports'}><MdOutlineAddCard size={30} /></Link><p id='har' ref={har}>புகார் பதிவு</p>
         </ul>
       </nav>
+
+      <Link id='naddb'  onMouseEnter={narme} onMouseLeave={narmd} to={'/newreports'}><MdOutlineAddCard size={40} /></Link><p id='nhar' ref={nhar}>புகார் பதிவு</p>
       <ul id='lang' ref={lang} >
         <li onClick={()=>{changetamil()}}>தமிழ்</li><hr />
         <li onClick={()=>{changeenglish()}}>English</li>
@@ -129,6 +139,8 @@ const changeenglish=()=>{
             <Link id='addb'  onMouseEnter={arme} onMouseLeave={armd} to={'/newreports'}><MdOutlineAddCard size={30} /></Link><p id='har' ref={har}>Add report</p>
         </ul>
       </nav>
+      <Link id='naddb'  onMouseEnter={narme} onMouseLeave={narmd} to={'/newreports'}><MdOutlineAddCard size={40} /></Link><p id='nhar' ref={nhar}>Add report</p>
+      
       <ul id='lang' ref={lang} >
         <li onClick={()=>{changetamil()}}>தமிழ்</li><hr />
         <li onClick={()=>{changeenglish}}>English</li>

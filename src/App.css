@@ -315,6 +315,16 @@ background-color: rgb(255, 255, 255);
   padding: 7px;
   box-shadow: 0px 0px 5px rgb(38, 36, 36);
 }
+#nhar{
+  display: none;
+  position: absolute;
+  bottom: 90px;
+  right: 15px;
+  background-color: rgb(254, 255, 255);
+  border-radius: 20px;
+  padding: 7px;
+  box-shadow: 0px 0px 5px rgb(38, 36, 36);
+}
 
 #lang{
   display: none;
@@ -407,6 +417,13 @@ background-color: rgb(255, 255, 255);
 }
 
 
+#naddb{
+  position: absolute;
+  right: 30px;
+  bottom: 40px;
+  display: none;
+}
+
 @media (max-width:700px) {
   
 .outerreportdiv{
@@ -468,9 +485,23 @@ background-color: rgb(255, 255, 255);
   width:66%;
 }
 
- 
+
 }
 
+@media (max-width:550px) {
+  #addb{
+    display: none;
+  }
+  #naddb{
+    display: block;
+  }
+  #lang{
+    right: 10px;
+  }
+  #hlang{
+    right: -10px;
+  }
+}
 
 
 
@@ -488,9 +519,17 @@ background-color: rgb(255, 255, 255);
 
 
 
+@media (max-width:480px) {
+  #th{
+    font-size: 25px;
+  }
+}
 
-
-
+@media (max-width:370px) {
+  #th{
+    font-size: 20px;
+  }
+}
 
 
 
